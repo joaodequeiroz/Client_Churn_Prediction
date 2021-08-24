@@ -80,7 +80,7 @@ The Dataset is available on Kaggle: [https://www.kaggle.com/mervetorkan/churndat
 
 ### 3.1.2 Data Dimension
 
-![](img/data_types.png)
+![](img/01_data_types.png)
 
 Number of rows: 10,000
 
@@ -124,7 +124,7 @@ The dataset was split into train and test sets with a ratio of 80/20. The split 
 
 ### 3.1.4 Descriptive Statistic
 
-![](img/data_stats.png)
+![](img/01_data_stats.png)
 
 ### 3.1.4.1 Numerical Attributes
 
@@ -184,5 +184,91 @@ The dataset was split into train and test sets with a ratio of 80/20. The split 
 ## 3.2 STEP 2 - Feature Engineering
 
 ### 3.2.1 Mind Map
-![](img/Client_Churn_Prediction.png)
+![](img/02_mind_map.png)
+
+### 3.2.2 Hypothesis List
+
+#### 3.2.2.1 Draft
+
+Finance
+
+- Costumers with lower salary tend have high churn rate than costumers with higher salaries.
+- Costumers with low balance tend have high churn rate than costumers with high balance.
+
+Time
+
+- Newer costumers tend to have higher churn rates than the old ones.
+
+Costumer
+
+- Young costumers have higher churn rate than the old ones.
+- Female costumers have higher churn rates than male costumers.
+- Churn rate are higher in costumers from France than from Spain and Germany.
+
+Relationship with Bank
+
+- Costumers with no credit card have higher churn rate than the ones that have.
+- Costumers that use one product from the bank have higher churn rate.
+- Costumers with low credit score have higher churn rate than the ones with high score.
+- Costumers that are not active members have higher churn rate.
+
+### 3.2.2.1 Final List
+
+1. Costumers with lower salary tend have high churn rate than costumers with higher salaries.
+2. Costumers with low balance tend have higher churn rate than costumers with high balance.
+3. Newer costumers tend to have higher churn rates than the old ones.
+4. Young costumers have higher churn rate than the old ones. 
+5. Female costumers have higher churn rates than male costumers.
+6. Churn rate are higher in costumers from France than from Spain and Germany.
+7. Costumers with no credit card have higher churn rate than the ones that have.
+8. Costumers that use one product from the bank have higher churn rate.
+9. Costumers with low credit score have higher churn rate than the ones with high score.
+10. Costumers that are not active members have higher churn rate.
+
+### 3.2.3 Feature Engineering
+
+The Feature Engineering was executed based on the features relationship, according to the analysis from the descriptive statistics.
+
+## 3.3 STEP 03 - Data Filtering
+
+No need for data filtering in this project.
+
+## 3.4 STEP 04 - Exploratory Data Analysis
+
+### 3.4.1 Univariate Analysis
+
+Studies the behaviour of the variables independently. (Min, Max, Range, Distribution, etc..)
+
+#### 3.4.1.1 Response Variable
+
+![](img/04_response_variable.png)
+
+
+- **Churn (exited = 1) ** 7963
+- **No Churn (exited = 0)** 2037
+
+#### 3.4.1.2 Numerical Variable
+
+The histogram below shows the distribution of the numerical features from dataset.
+
+![](img/04_num_att.png)
+
+#### 3.4.1.3 Categorical Variable
+
+![](img/04_cat_att_geo.png)
+
+- **France** 50.140 %
+- **Germany** 50.140 %
+- **Spain** 24.770 %
+
+
+![](img/04_cat_att_gender.png)
+
+- **Male** 54.570 %
+- **Female** 45.430 %
+
+
+### 3.4.2 Bivariate Analysis
+
+Study how the variables impact the response variable. (Correlation, validate hypothesis)
 
