@@ -272,3 +272,33 @@ The histogram below shows the distribution of the numerical features from datase
 
 Study how the variables impact the response variable. (Correlation, validate hypothesis)
 
+![](img/04_hip_list.png)
+
+
+Main hypothesis:
+
+H2. Costumers with low balance tend have high churn rate than costumers with high balance.
+Response: FALSE
+High balance -> CHURN
+
+![](img/04_hipo_02.png)
+
+
+H4. Young costumers have higher churn rate than the old ones.
+Response: FALSE
+High age -> CHURN
+
+![](img/04_hipo_04.png)
+
+H6. Churn rate are higher in costumers from Spain than from France and Germany.
+Response: TRUE
+France -> CHURN
+
+![](img/04_hipo_06.png)
+
+
+H8. Costumers that use one product from the bank have higher churn rate.
+Response: TRUE
+One product -> CHURN
+
+![](img/04_hipo_08.png)
