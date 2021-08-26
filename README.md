@@ -277,28 +277,201 @@ Study how the variables impact the response variable. (Correlation, validate hyp
 
 Main hypothesis:
 
-H2. Costumers with low balance tend have high churn rate than costumers with high balance.
-Response: FALSE
-High balance -> CHURN
+#### 3.4.2.1  - H1. Costumers with lower salary tend have high churn rate than costumers with higher salaries.
+
+Response: **FALSE**.
+
+Even though the density distribution between salaries of costumers that are in churn situation and costumers that are not in churn situation are almost the same, where is confirmed in the correlation heatmap that shows a low coefficient of 0.012; observing the graphs plotted, it is possible to say the there is a modest increase in the churn rate for costumers with higher salaries. 
+
+It becomes clearer this assumption when dividing the costumers by groups in a range of salaries of $5000. The relative percentage of costumers in churn situation is slightly increased, when the range of salaries goes up compared to the distribution of active costumers (no churn).
+
+#### 3.4.2.2  - H2. Costumers with low balance tend have higher churn rate than costumers with high balance.
+
+Response: **FALSE**.
+
+In the distribution plot, the region where the costumer's balance is lower, the density of costumers in no churn situation is higher and as the sum of balance increases the density of costumers in churn is greater than the density of active costumers. In other words, costumers with low balance have low churn rate than the ones with high balance in their bank's account.
+
+This is proved by the relative percentage plot, where is possible to see that the churn rate increases as the balance of the costumer's bank account is high, compared to the churn rate of the costumers that are active. The heatmap shows a correlation coefficient of 0.12 between balance and exited feature.
+
+The percentage of costumers with a balance equal to zero ($0) is expressive. 39.14% for active costumers and 24.54% for costumers in churn.
 
 ![](img/04_hipo_02.png)
 
+#### 3.4.2.3  - H3. Newer costumers tend to have higher churn rates than the old ones.
 
-H4. Young costumers have higher churn rate than the old ones.
-Response: FALSE
-High age -> CHURN
+Response: **FALSE**.
+
+The distribution of tenure for costumers in churn and no churn situation has the same pattern. They are evenly distributed, making hard to decide the impact of this feature in the response variable. The heatmap shows a negative correlation coefficient of -0.014. Even though it is difficult to say, it is shown that as the tenure value increases the chance of the costumer be in churn also increases, marking the hypothesis as false.
+
+
+#### 3.4.2.4  - H4. Young costumers have higher churn rate than the old ones.
+
+Response: **FALSE**.
+
+The costumers in churn tend to have higher age than the ones that are not in churn. In the distribution plot, is shown that the curve of churn costumers is shifted to the right, where the region of costumers with higher age is. The heatmap shows a correlation coefficient of 0.29 between age and exited feature, proving that as the age increases, the chance of the costumer be in churn also increases.
 
 ![](img/04_hipo_04.png)
 
-H6. Churn rate are higher in costumers from Spain than from France and Germany.
-Response: TRUE
-France -> CHURN
+#### 3.4.2.5  - H5. Female costumers have higher churn rates than male costumers.
+
+Response: **TRUE**.
+
+As seen previously in the univariate analysis, the percentage of male and female in the dataset is 54.57% and 45.43 % respectively. However, when the churn situation is plotted among genders the result differs. The percentage of female costumers that are in churn is 55.91 % compared to male costumers, 44.08 %. This result shows that female costumers have higher churn rate than male costumers, proving that the hypothesis is true.
+
+#### 3.4.2.6  - H6. Churn rate are higher in costumers from France than from Germany and Spain.
+
+Response: **FALSE**.
+
+France represents 50.14% of the geography of the bank's geography, it also takes a major slice of the churn costumers alongside Germany. 39.76% of costumers in churn are from France, 39.96% are from Germany and 20.27% Spain. The result shows that for a little difference, Germany still holds the position of the country with higher churn rate compared to Spain and France. This can be even clearer when observing the density distribution plot.
+
+For non churn costumers, France represents 52.79%, Germany takes 21.28% and Spain has 25.91% of their clients.
 
 ![](img/04_hipo_06.png)
 
+#### 3.4.2.7  - H7. Costumers with no credit card have higher churn rate than the ones that have.
 
-H8. Costumers that use one product from the bank have higher churn rate.
-Response: TRUE
-One product -> CHURN
+Response: **TRUE**.
+
+69.90% of costumers that are in churn have credit card and 30.09% do not. However, analysing the data from costumers that are not in churn 70.71% of them also have credit card against 29.28% that do not have. Even with a little difference, costumers with credit card have lower chance to be in churn. This assumption can be proved by plot of the heatmap, which shows a negative correlation coefficient of -0.0071.
+
+
+#### 3.4.2.8  - H8. Costumers that use one product from the bank have higher churn rate.
+
+Response: **TRUE**.
+
+It is known that all of the costumers used and use at least one product of the bank. The distribution plot shows that as the number of products increases the percentage of costumers in churn. In addition, when comparing the percentage of costumers that are in churn with number of products that they use, 69.17% of costumers in churn used only one product, whereas 17.08% used two products, 10.80% used three products and 2.94% used four products.
+
+For the non-churn costumers, 46.15% use only one product, 53.27% use two products and 0.57% use three products. 
+
+From the heatmap, a coefficient correlation between response variable 'exited' and number of products is -0.0048.
 
 ![](img/04_hipo_08.png)
+
+
+#### 3.4.2.9  - H9. Costumers with low credit score have higher churn rate than the ones with high score.
+
+Response: **TRUE**.
+
+The density distribution plot of credit score for costumers in churn and not in churn have similar behavior. However, the dataset binned of credit score of 50 show clearer the evidence that as the credit scores increases, the percentage of churn costumers also increases. From the relative percentage plot it is possible to see that the percentage of churn clients is higher in the range of 350 to 650, after that the situation inverts as the credit score goes up and the percentage of non churn costumers increases. The coefficient correlation that is found is 0.12 from the heatmap.
+
+ 
+#### 3.4.2.10  - H10. Costumers that are not active members have higher churn rate.
+
+Response: **TRUE**.
+
+51.51% of the customers are active members, and from the relative percentage distribution plot is possible to see that 55.45% of the active members are not in churn and 36.08% are. On the other hand, 44.54% of the not active members are not in churn and 63.91% are in churn. This proves the hypothesis that costumers are that are not active members have a higher churn rate. The correlation coefficient between the response variable 'exited' and if the member is active or not, is -0.0071. 
+
+### 3.4.3 Multivariate Analysis
+
+Multivariate analysis of numerical attributes made with pearson's correlation method.
+
+highest correlations:
+
+balance x num_of_products = -0.3
+age x axited = 0.29
+
+
+![](img/04_multivariate.png)
+
+
+## 3.5 STEP 05 - Data Preparation
+
+### 3.5.1 Boxplot
+
+Boxplots of some features in order to check outliers presence.
+
+![](img/05_boxplots.png)
+
+### 3.5.1 Rescaling
+
+**3.5.1.2 Standard Scaler**
+
+For features close to a normal distribution → Credit Score
+
+**3.5.1.2 MinMax Scaler**
+
+For features with low outliers influence → Age, Tenure, Balance, Num of Products and Estimated Salary.
+
+### 3.5.2 Transformation
+
+Apply One-Hot Encoding on geography and gender features due to their low cardinality.
+
+
+## 3.6 STEP 06 - Feature Selection
+
+#### 3.6.1 Split Dataframe into training and test dataset
+
+The first step of feature selection was to remove unnecessary features for the machine learning training: row_number, customer_id and surname.
+The dataframe was split in 80% of the data for training and 20% for test keeping the 'Exited' feature proportion in both the test and train dataset.
+
+In the second step, the "exited" feature was detached from the train dataset to become the target variable, in order to allow the model to be trained.
+
+#### 3.6.2 Feature Selector
+
+Random Forest Classifier and Boruta were used to select the top features for the machine learning section. 
+
+*Random Forest Classifier Results*
+
+![](img/06_feature_importance.png)
+
+
+*Features selected by Boruta*
+
+['age', 'balance', 'num_of_products', 'estimated_salary']
+
+
+#### 3.6.3 Final List - Features
+
+Based on EDA and Features Selector step, the top features chosen were:
+
+[age', 'balance', 'num_of_products', 'estimated_salary', 'credit_score',
+'is_active_member', 'geography_Germany','geography_France','geography_Spain']
+
+## 3.7 STEP 07 - Machine Learning Modelling
+
+### 3.7.1 Balancing Data for Training
+
+Due the fact that the target variable is highly imbalanced, balancing the data is necessary because, training a classification algorithm to detect different classes accurately becomes difficult as the model becomes biased towards prediction. 
+
+A hybrid technique was used, SMOTE + Tomek Links.
+
+![](img/07_balancing_data.png)
+
+
+The following classifiers were trained in order to solve the churn prediction task.
+
+- Logistic Regression;
+- Decision Tree;
+- Random Forest;
+- XGBoost.
+
+Two trains were performed: first with original imbalanced data, then with balanced data. All the models were evaluated through 10-fold cross-validation on the train dataset. Based on the business context, the recall score play an important part in the model performance analysis. This is because it is better for the business to classify the lowest number of false negatives and the highest number of true positives, which is calculated in the recall score. Additionally, f1-score can be more decisive in this context, because it takes account of recall and precision score. 
+
+
+The results are displayed below:
+
+### 3.7.2 Models Performance - Imbalanced Data
+
+![](img/07_models_perf_imb.png)
+
+The logistic regression model has the lowest scores among all models trained, f1-score of 0.29737 and 0.19325 of recall. The Random Forest Classifier has the best precision (0.73543) and F1-score (0.57857).
+
+### 3.7.3 Models Performance - Balanced Data
+
+![](img/07_models_perf_bal.png)
+
+The XGBoost has the best precision of 0.91779 and a F1-score of 0.88763, whereas the Random Forest Classifier has the best recall (0.91102) and F1-score (0.90064). 
+
+## 3.8 STEP 08 - **Hyperparameter Fine Tunning**
+
+In order to better accomplish the project goals, deliverables and deployment, the chosen model to perform the fine tuning is Random Forest Classifier.
+
+The Fine Tuning was performed using the Random Forest Classifier. Two fine-tuning were performed: the first with balanced data, and the second with imbalanced data.
+A Randomized Search was executed through sklearn's RandomizedSearchCV function to perform the fine tuning.
+The metrics were calculated using the test set, so that the models can be evaluated on unseen data, therefore a more realistic scenario.
+The Random Forest with default hyperparameters, as well as the XGBoost, were also evaluated with their predictions on the test set for comparison purpose. The results are showed below:
+
+The model with best performance, that is, with best F1-Score and best roc_auc_score is XGBoost - balanced.
+
+![](img/07_models_perf_test.png)
+
