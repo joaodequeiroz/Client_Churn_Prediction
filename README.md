@@ -559,13 +559,13 @@ In this context, four scenarios were simulated:
 
 Recovered Revenue: $897,344.60
 
-% Recovered from Total Revenue loss: 70.23%
+% Recovered from Total Revenue loss: 11.98%
 
 Investment: $10,000.00
 
-ROI: 52,613.35%
+ROI: 8,973.45%
 
-Potential clients recovered according to model: 49
+Potential clients recovered acc. model: 49
 
 Potential churn reduction: 12.04%
 
@@ -574,13 +574,13 @@ Potential churn reduction: 12.04%
 
 Recovered Revenue: $1,597,874.34
 
-% Recovered from Total Revenue loss: 70.23%
+% Recovered from Total Revenue loss: 21.33%
 
 Investment: $10,000.00
 
-ROI: 52,613.35%
+ROI: 15,978.74%
 
-Potential clients recovered according to model: 89
+Potential clients recovered acc. model: 89
 
 Potential churn reduction: 21.87%
 
@@ -589,31 +589,30 @@ Potential churn reduction: 21.87%
 
 Recovered Revenue: $2,938,193.64
 
-% Recovered from Total Revenue loss: 70.23%
+% Recovered from Total Revenue loss: 39.22%
 
 Investment: $10,000.00
 
-ROI: 52,613.35%
+ROI: 29,381.94%
 
-Potential clients recovered according to model: 155
+Potential clients recovered acc. model: 155
 
 Potential churn reduction: 38.08%
 
 
 4. Top 500 clients with highest churn probability, incentive per client: $20.
 
-Recovered Revenue: 5,261,334.89
+Recovered Revenue: $5,261,334.89
 
 % Recovered from Total Revenue loss: 70.23%
 
-Investment: 10,000.00
+Investment: $10,000.00
 
 ROI: 52,613.35%
 
-Potential clients recovered according to modell: 227
+Potential clients recovered acc. model: 227
 
 Potential churn reduction: 55.77%
-
 
 Result: **The best alternative is the number 4, predicting a higher ROI.**
 
