@@ -6,10 +6,10 @@
 - [1. Introduction](#1-introduction)
 - [2. The Business Challenge](#2-business-challenge) 
 - [3. Project Development](#3-project-development)
-- [8. Next Steps](#8-next-steps)
-- [9. Lessons Learned](#9-lessons-learned)
-- [10. Conclusion](#10-conclusion)
-- [References](#references)
+- [4. Next Steps](#4-next-steps)
+- [5. Lessons Learned](#5-lessons-learned)
+- [6. Conclusion](#6-conclusion)
+- [7. References](#7-references)
 
 # 1. Introduction
 ## 1.1 TopBank Company
@@ -473,5 +473,157 @@ The Random Forest with default hyperparameters, as well as the XGBoost, were als
 
 The model with best performance, that is, with best F1-Score and best roc_auc_score is XGBoost - balanced.
 
-![](img/07_models_perf_test.png)
+![](img/08_models_perf_test.png)
+
+## 3.9 STEP 09 - **Convert Model Performance to Business Values**
+
+### 3.9.1 Model Performance
+
+#### 3.9.1.1 Precision vs Recall
+
+Increasing the threshold means that the model will improve the ratio of correctly predicted clients in churn, however it will detect less clients that tend to churn. Whereas, decreasing the threshold means that the model will detect more potential churn clients, however the ratio of correctly predicted clients in churn will decrease.
+
+The precision versus recall curve shows that the greater the precision, the lower the recall, and vice-versa.
+
+![](img/09_precisionrecall.png)
+
+#### 3.9.1.2 ROC Curve
+
+The Receiver Operating Characteristic Curve (ROC Curve) tells how much the model is capable of distinguishing between classes. The graph below shows that even though the False Positive Rate value or the True Positive Rate value of the model is set differently from the default values, the overall performance of the model remains the same, because the area under the curve remains the same. To improve the overall performance, the model must be fine tuned again or another model must be trained, so that the ROC area under the curve increases (the curve line must get closer to the top left corner).
+
+![](img/09_roccurve.png)
+
+The trained model can predict if the customers will get into churn or not according to the metrics and performance presented above. However, the model is not capable to determine which customers should receive an incentive in order not to leave the bank. Hence, another two metrics must be applied in order to prioritize and determine the clients that should receive a financial incentive: the Lift Curve and Cumulative Gains Curve.
+
+#### 3.9.1.3 Cumulative Gain Curve
+
+Gain is a measure of the effectiveness of a classification model calculated as the ration between the results obtained with and without the model.
+
+The cumulative gains curve shows that if 20% of customers with highest probability to churn are contacted, using the prediction of the model should reach 60% of total customers in churn. Also, works the reverse way, for exampleif the business goal was, for example, to reach 80% of the customers that are most likely to respond, than 40% of the customers would need to be contacted to achieve that milestone.
+As a comparison, using a random client selection (baseline), should reach only 20% of clients in churn. This means that using the model is 60% / 20% = 3 times better than random selection, which is exactly the value showed on the lift curve.
+
+
+![](img/09_cumulativegain.png)
+
+
+#### 3.9.1.4 Lift Curve
+
+The lift chart provides an easy way to visualize how many times better applying the model is than random selection for any percentage of the ranked records.
+The greater the area between the lift curve and the baseline, the better the model.
+
+![](img/09_liftcurve.png)
+
+
+### 3.9.2 Business Performance
+
+All business results were calculated on the test set.
+
+
+#### 3.9.2.1. Current Churn Rate
+
+The current churn Rate is 20.37%
+
+#### 3.9.2.2 Churn variation per tenure
+
+It is not possible to calculate how the churn rate varies per month, as there's no month information in the available dataset.
+What can be calculated is the churn variation per tenure (number of years that the customer was active).
+
+![](img/09_churntenure.png)
+
+
+#### 3.9.2.3 Model's Performance
+
+The model has a precision of 63.59% to label the clients as churns. The model can detect 55.77% of clients in churn.
+
+#### 3.9.2.4 Company's Revenue
+
+- Total current return of all clients: $38,079,850.98
+- Total revenue loss if all 407 clients in churn leave the bank: 7,491,850.97.
+The total revenue loss represents 19.67% of total current return.
+- Company's recovered revenue if 227 clients don't get into churn through the model: 
+$4,496,603.52
+That represents 55.77% of clients labeled as in churn and 60.02% of the total revenue loss
+
+
+This is an ideal scenario if the bank uses the model to predict the clientes that would be in churn and all of them would be recovered. 
+However, in reality, even if the model predicts that a client would be in churn it does not necessarily mean that this client will not leave the bank. So, to help improve this situation the bank is giving a financial incentive, as stated in the business challenge.  The amount available to give a financial incentive for the clients is constrained to $10,000, that is, is a limited resource that must be applied so that the return on investment (ROI) is maximized.
+
+
+#### 3.9.2.5 ROI
+
+The Lift Curve and Cumulative Gains Curve showed that if the clients with the highest churn probability according the model's prediction are selected, then the gain over a random selection is maximized.
+In this context, four scenarios were simulated:
+
+
+1. Top 50 clients with highest churn probability, incentive per client: $200.
+
+Recovered Revenue: $897,344.60
+
+% Recovered from Total Revenue loss: 70.23%
+
+Investment: $10,000.00
+
+ROI: 52,613.35%
+
+Potential clients recovered according to model: 49
+
+Potential churn reduction: 12.04%
+
+
+2. Top 100 clients with highest churn probability, incentive per client: $100.
+
+Recovered Revenue: $1,597,874.34
+
+% Recovered from Total Revenue loss: 70.23%
+
+Investment: $10,000.00
+
+ROI: 52,613.35%
+
+Potential clients recovered according to model: 89
+
+Potential churn reduction: 21.87%
+
+
+3. Top 200 clients with highest churn probability, incentive per client: $50.
+
+Recovered Revenue: $2,938,193.64
+
+% Recovered from Total Revenue loss: 70.23%
+
+Investment: $10,000.00
+
+ROI: 52,613.35%
+
+Potential clients recovered according to model: 155
+
+Potential churn reduction: 38.08%
+
+
+4. Top 500 clients with highest churn probability, incentive per client: $20.
+
+Recovered Revenue: 5,261,334.89
+
+% Recovered from Total Revenue loss: 70.23%
+
+Investment: 10,000.00
+
+ROI: 52,613.35%
+
+Potential clients recovered according to modell: 227
+
+Potential churn reduction: 55.77%
+
+
+Result: **The best alternative is the number 4, predicting a higher ROI.**
+
+# 4. Next Steps
+
+The goal of the next steps is to improve the model performance, hence to improve the business revenue / results.
+
+# 5. Lessons Learned
+
+# 6. Conclusion
+
+# 7. References
 
